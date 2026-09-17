@@ -1,13 +1,16 @@
-const EventEmitter = require('events');
-const app = new EventEmitter();
+const EventEmitter = require("events");
 
-app.on('login', (user) => {
-    console.log(`${user} logged in`);
+// class MyEmitter extends EventEmitter {}
+
+const myEmitter = new EventEmitter();
+
+myEmitter.on("Greet", (name) => {
+    console.log(`Hello, ${name}!`);
 });
 
-app.on('message', (msg) => {
-    console.log(`Message: ${msg}`);
+myEmitter.on("exit", () => {
+    console.log("Program is exiting......");
 });
 
-app.emit('login', 'Aman');
-app.emit('message', 'Welcome to Node.js');
+myEmitter.emit("Greet", "Shreya");
+myEmitter.emit("exit");
