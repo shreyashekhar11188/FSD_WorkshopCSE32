@@ -8,3 +8,8 @@ setTimeout(() => {
     console.log("3. setTimeout()");
 }, 0);
 
+setImmediate(() => {
+    console.log("4. setImmediate()");
+});
+
+console.log("5. Synchronous code - After callbacks");
